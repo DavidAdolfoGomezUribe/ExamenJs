@@ -50,7 +50,7 @@ document.getElementById("miformulario").addEventListener("submit", async functio
 
         let itemsEnLS = localStorage.length
 
-        if (itemsEnLS > 1) {
+        if (itemsEnLS >= 1) {
             let newItemsEnLS = itemsEnLS + 1
             localStorage.setItem(newItemsEnLS, JSON.stringify(formData));
         } else {
