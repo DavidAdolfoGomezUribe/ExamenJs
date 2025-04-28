@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer ></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Bienvenidos a este recetario</h1>
+        <section>
+            <article>
+                <form  class="miformulario" id="miformulario" action="">
+
+                    <label for="nombre">nombre de la receta</label>
+                    <input required="true" type="text" name="" id="nombre" >
+
+                    <label for="ingredientes">ingredientes</label>
+                    <input required="true" type="text" name="" id="ingredientes">
+
+                    <label for="instrucciones">instrucciones de preparacion</label>
+                    <input required="true" type="text" name="" id="instrucciones">
+
+                    <label for="tiempo">tiempo de preparacion</label>
+                    <input required="true" type="number" id="tiempo">
+
+                    <label for="">numero de porciones</label>
+                    <input required="true" type="number" id="numero">
+
+              
+                    <label for="">categoria</label>
+                    <select id="categoria" name="menu" >
+                        <option value="desayuno">Desayuno</option>
+                        <option value="almuerzo">Almuerzo</option>
+                        <option value="cena">Cena</option>
+                        <option value="postre">Postre</option>
+                    </select>
+                    
+                    <label for="">nivel de dificltad</label>
+                    <select id="dificultad" name="menu" >
+                        <option value="facil">Facil</option>
+                        <option value="medio">Medio</option>
+                        <option value="dificil">Dificil</option>
+                    </select>
+                    <button>Enviar</button>
+                </form>
+            </article>
+
+            <article >
+                <form id="filtro" action="#">
+                    <label for="nombre">Por favor ingrese el numero de la receta</label>
+                    <input  type="number" name="" id="filtronombre">
+
+                    
+                    <button>Enviar</button>
+                    <p class="eliminar">Eliminar x</p>
+                    <p class="editar"> Editar</p>
+                </form>
+                
+            </article>
+
+            <article id="recetario">
+                <h1>Listado de recetas registradas</h1>
+
+                
+            </article>
+        </section>
+        
+
+    </main>
+</body>
+</html>
