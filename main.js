@@ -53,8 +53,10 @@ document.getElementById("miformulario").addEventListener("submit", async functio
         if (itemsEnLS >= 1) {
             let newItemsEnLS = itemsEnLS + 1
             localStorage.setItem(newItemsEnLS, JSON.stringify(formData));
+            listarTodo()
         } else {
             localStorage.setItem("1", JSON.stringify(formData));
+            listarTodo()
         }
 
     }
@@ -64,34 +66,37 @@ document.getElementById("miformulario").addEventListener("submit", async functio
 
 const recetario = document.getElementById("recetario")
 
-
-for (let i = 1; i < (localStorage.length + 1); i++) {
-    let string = i.toString()
-    
-    const ejemplo = localStorage.getItem(string)
-    const ejemploDos= JSON.parse(ejemplo)
+function listarTodo() {
     
     
-    recetario.innerHTML+=`<div>
-                            <p>Numero  de la receta ${i} </p>
-                            <p>Nombre ${ejemploDos.nombre} </p>
-                            <p>ingredientes ${ejemploDos.ingredientes} </p>
-                            <p>instrucciones ${ejemploDos.instrucciones} </p>
-                            <p>tiempo ${ejemploDos.tiempo} </p>
-                            <p>numero ${ejemploDos.numero} </p>
-                            <p>categoria ${ejemploDos.categoria} </p>
-                            <p>dificultad ${ejemploDos.dificultad} </p>
-                        </div>`
-
+    for (let i = 1; i < (localStorage.length + 1); i++) {
+        let string = i.toString()
+        
+        const ejemplo = localStorage.getItem(string)
+        const ejemploDos= JSON.parse(ejemplo)
+        
+        
+        recetario.innerHTML+=`<div>
+                                <p>Numero  de la receta ${i} </p>
+                                <p>Nombre ${ejemploDos.nombre} </p>
+                                <p>ingredientes ${ejemploDos.ingredientes} </p>
+                                <p>instrucciones ${ejemploDos.instrucciones} </p>
+                                <p>tiempo ${ejemploDos.tiempo} </p>
+                                <p>numero ${ejemploDos.numero} </p>
+                                <p>categoria ${ejemploDos.categoria} </p>
+                                <p>dificultad ${ejemploDos.dificultad} </p>
+                            </div>`
     
-    }
+        
+        }
 
-
+}    
+listarTodo()
 
 
 
 document.getElementById("filtro").addEventListener("submit", async function(event) {
-    
+    alert("Para editar rellena de nuevo el formulario con los datos nuevos y luego has click en editar")
     let filtronombreValue = document.getElementById("filtronombre").value;
     
     let valorUno = localStorage.getItem(filtronombreValue)
@@ -116,6 +121,9 @@ document.getElementById("filtro").addEventListener("submit", async function(even
     
     let eliminar= document.querySelector(".eliminar")
         eliminar.addEventListener("click",()=>{
+             
+        
+
             
             const formData = {
                 nombre:"",
@@ -133,15 +141,26 @@ document.getElementById("filtro").addEventListener("submit", async function(even
 
     let editar= document.querySelector(".editar")
         editar.addEventListener("click",()=>{
+
+            
+
+
+            let nombreValue = document.getElementById("nombre").value;
+            let ingredientesValue = document.getElementById("ingredientes").value;
+            let instruccionesValue = document.getElementById("instrucciones").value;
+            let tiempoValue = document.getElementById("tiempo").value
+            let numeroValue = document.getElementById("numero").value
+            let categoriaValue = document.getElementById("categoria").value
+            let dificltadValue = document.getElementById("dificultad").value    
             
             const formData = {
-                nombre:"para editar",
-                ingredientes:"para editar",
-                instrucciones:"para editar",
-                tiempo:"para editar",
-                numero: "para editar ",
-                categoria: "para editar ",
-                dificultad: "para editar "
+                nombre:nombreValue,
+                ingredientes:ingredientesValue,
+                instrucciones:instruccionesValue,
+                tiempo:tiempoValue,
+                numero: numeroValue,
+                categoria: categoriaValue,
+                dificultad: dificltadValue
             };
 
             localStorage.setItem(filtronombreValue, JSON.stringify(formData));

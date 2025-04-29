@@ -1,10 +1,14 @@
 body{
+    background-color: burlywood;
     position: relative;
     margin: 0 auto ;
     width: 80vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .miformulario{
+    border-radius: 1vw;
+    padding: 2vw;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -21,6 +25,8 @@ body{
     border-radius: 1vw;
     padding: 5px;
     div{
+        border-radius: 1vw;
+        
         background-color: #25252533;
         display: flex;
         flex-direction: column;
@@ -37,4 +43,27 @@ body{
     margin-top: 2vw;
     margin-bottom: 2vw;
     
+}
+
+.botones{
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.eliminar{
+    background-color: #79010180;
+    border-radius: 1vw;
+    border:  2px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.editar{
+    background-color: #25252533;
+    border-radius: 1vw;
+    border:  2px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
 }
