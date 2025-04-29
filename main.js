@@ -77,14 +77,14 @@ function listarTodo() {
         
         
         recetario.innerHTML+=`<div>
-                                <p>Numero  de la receta ${i} </p>
-                                <p>Nombre ${ejemploDos.nombre} </p>
-                                <p>ingredientes ${ejemploDos.ingredientes} </p>
-                                <p>instrucciones ${ejemploDos.instrucciones} </p>
-                                <p>tiempo ${ejemploDos.tiempo} </p>
-                                <p>numero ${ejemploDos.numero} </p>
-                                <p>categoria ${ejemploDos.categoria} </p>
-                                <p>dificultad ${ejemploDos.dificultad} </p>
+                                <p><strong>Numero  de la receta :</strong> ${i} </p>
+                                <p><strong>Nombre </strong> : ${ejemploDos.nombre} </p>
+                                <p><strong>ingredientes : </strong>${ejemploDos.ingredientes}</strong> </p>
+                                <p><strong>instrucciones :</strong>${ejemploDos.instrucciones} </p>
+                                <p><strong>tiempo :</strong>${ejemploDos.tiempo} </p>
+                                <p><strong>numero :</strong>${ejemploDos.numero} </p>
+                                <p><strong>categoria :</strong>${ejemploDos.categoria} </p>
+                                <p><strong>dificultad :</strong>${ejemploDos.dificultad} </p>
                             </div>`
     
         
@@ -142,9 +142,6 @@ document.getElementById("filtro").addEventListener("submit", async function(even
     let editar= document.querySelector(".editar")
         editar.addEventListener("click",()=>{
 
-            
-
-
             let nombreValue = document.getElementById("nombre").value;
             let ingredientesValue = document.getElementById("ingredientes").value;
             let instruccionesValue = document.getElementById("instrucciones").value;
@@ -164,14 +161,8 @@ document.getElementById("filtro").addEventListener("submit", async function(even
             };
 
             localStorage.setItem(filtronombreValue, JSON.stringify(formData));
-            
+            alert("has editiados los datos")            
         })
-
-
-
-
-
-
 
 })
 
